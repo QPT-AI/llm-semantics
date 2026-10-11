@@ -1,0 +1,21 @@
+@chat parallel tool calls
+system you are helpful
+user what is the weather in Bogota and Lima?
+call 1 weather(Bogota)
+call 2 weather(Lima)
+result 2 18C
+result 1 14C
+assistant Bogota 14C, Lima 18C
+
+@chat result before call
+user hi
+result 7 orphan
+
+@chat user speaks while a call is pending
+user hi
+call 1 search(x)
+user hello?
+
+@chat pending call at the end
+user hi
+call 1 search(x)

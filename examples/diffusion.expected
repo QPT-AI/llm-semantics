@@ -1,0 +1,15 @@
+== examples/diffusion.llm
+-- anti-copy, fully masked
+evidence|1
+post|ab|1/2
+post|ba|1/2
+marg|0|a|1/2
+marg|0|b|1/2
+marg|1|a|1/2
+marg|1|b|1/2
+-- anti-copy, one position revealed
+evidence|1/2
+post|ab|1
+post|ba|0
+marg|1|a|0
+marg|1|b|1

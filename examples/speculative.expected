@@ -1,0 +1,25 @@
+== examples/speculative.llm
+-- draft disagrees
+rate|3/4
+tv|1/4
+accept|0|1
+accept|1|1/2
+accept|2|1
+residual|0|1
+residual|1|0
+residual|2|0
+out|0|1/2
+out|1|1/4
+out|2|1/4
+-- identical models accept always
+rate|1
+tv|0
+accept|0|1
+accept|1|1
+accept|2|1
+residual|0|1/3
+residual|1|1/3
+residual|2|1/3
+out|0|1/3
+out|1|1/3
+out|2|1/3

@@ -1,0 +1,13 @@
+== examples/chat.llm
+-- parallel tool calls
+valid|true
+complete|true
+-- result before call
+valid|false|1
+complete|false
+-- user speaks while a call is pending
+valid|false|2
+complete|false
+-- pending call at the end
+valid|true
+complete|false

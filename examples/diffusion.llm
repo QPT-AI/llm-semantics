@@ -1,0 +1,10 @@
+# Opposite bits: the example of parallel_decoding_inexact.
+@diffusion anti-copy, fully masked
+data ab 1/2
+data ba 1/2
+observe __
+
+@diffusion anti-copy, one position revealed
+data ab 1/2
+data ba 1/2
+observe a_

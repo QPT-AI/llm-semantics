@@ -1,0 +1,38 @@
+# The witness distribution of LLM.Counterexamples.
+@sample top-p is not idempotent
+probs 1/2 3/10 1/5
+top-p 3/5
+emit
+top-p 3/5
+
+@sample top-p then top-k
+probs 1/2 3/10 1/5
+top-p 3/5
+top-k 2
+
+@sample top-k then top-p
+probs 1/2 3/10 1/5
+top-k 2
+top-p 3/5
+
+@sample top-k commutes with min-p (a)
+weights 5 4 4 2 1
+top-k 2
+min-p 1/2
+
+@sample top-k commutes with min-p (b)
+weights 5 4 4 2 1
+min-p 1/2
+top-k 2
+
+@sample ties are kept by top-k
+probs 0.4 0.3 0.3
+top-k 2
+
+@sample exact base-2 softmax, temperature 1/2, mask
+logits2 3 1 1 0
+emit
+sharpen 2
+emit
+mask 1 2 3
+cdf

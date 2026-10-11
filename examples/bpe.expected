@@ -1,0 +1,20 @@
+== examples/bpe.llm
+-- not the shortest tokenization
+tokens|abc|a bc
+tokens-lookup|abc|abc
+tiktoken|abc|abc
+count|abc|4
+agree|false
+-- leftmost occurrence wins ties
+tokens|aaa|aa a
+tokens-lookup|aaa|aa a
+tiktoken|aaa|aa a
+tokens|aaaa|aa aa
+tokens-lookup|aaaa|aa aa
+tiktoken|aaaa|aa aa
+agree|true
+-- whole-word lookup
+tokens|abcd|a bc d
+tokens-lookup|abcd|abcd
+tiktoken|abcd|abcd
+agree|true

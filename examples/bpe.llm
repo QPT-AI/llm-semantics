@@ -1,0 +1,20 @@
+# The counterexample of LLM.Tok.bpe_not_shortest, with letters.
+@bpe not the shortest tokenization
+merge b c
+merge a b
+merge ab c
+encode abc
+count abc
+
+@bpe leftmost occurrence wins ties
+merge a a
+encode aaa
+encode aaaa
+
+# tiktoken and Hugging Face with ignore_merges emit a word that is itself a token.
+@bpe whole-word lookup
+merge b c
+merge a b
+merge c d
+merge ab cd
+encode abcd

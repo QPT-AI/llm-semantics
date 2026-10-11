@@ -1,0 +1,17 @@
+== revisions
+llm-semantics working tree of 2026-10-11 (no commits yet)
+lean Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+tokenizers 0.23.3
+tiktoken 0.14.0
+== generating corpora (600 cases per seed, 4 seeds)
+== running the oracle
+== tokenizers
+[HF tokenizers, default] 2400 cases: agree 2400
+[HF tokenizers, ignore_merges] 2400 cases: agree 2400
+[tiktoken] 2400 cases: agree 2400
+== planted defect (must be detected)
+ok: planted tokenizer defect detected
+== llama.cpp samplers (llama.cpp a9d27ac693ff, 2026-10-11, libllama.so built with -DGGML_NATIVE=OFF)
+[llama.cpp vs tie-keeping semantics] 2400 cases: agree 2155, diverge-ties 245
+agree with tie-keeping semantics 2155; agree with positional semantics up to tied tokens 245; unexplained 0
+ok: planted sampler defect detected
